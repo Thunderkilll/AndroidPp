@@ -16,7 +16,7 @@ public class AboutUsActivity extends AppCompatActivity {
     LinearLayout l;
     TextView textView1, textView2, textView3;
     Animation anim , anim1 ,  anim2  ;
-    Toolbar about_appbar ;
+    AppBarLayout about_appbar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class AboutUsActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
         about_appbar = findViewById(R.id.app_bar);
-        about_appbar.setTitle("About Us");
+
         anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim1 = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim2 = AnimationUtils.loadAnimation(this, R.anim.alpha);
