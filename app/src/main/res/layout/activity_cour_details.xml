@@ -7,4 +7,101 @@
     android:background="@drawable/mock"
     tools:context=".Activities.CourDetailsActivity">
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".Activities.ConjugaisonDetailActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/textfonts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="title"
+                    android:textAlignment="center"
+                    android:textColor="@color/blanc"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:id="@+id/textfonts1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="title"
+                    android:textAlignment="center"
+                    android:textColor="@color/blanc"
+                    android:textSize="38sp" />
+
+
+                <TextView
+                    android:id="@+id/textfonts2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/blanc"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/separateur2"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/blanc"
+                    android:text="                             "
+                    android:textAlignment="center"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:id="@+id/textfonts3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/blanc"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/separateur3"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/blanc"
+                    android:text="                             "
+                    android:textAlignment="center"
+                    android:textSize="48sp" />
+
+
+                <TextView
+                    android:id="@+id/textfonts4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/blanc"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/separateur4"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/blanc"
+                    android:text="                             "
+                    android:textAlignment="center"
+                    android:textSize="48sp" />
+
+
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
