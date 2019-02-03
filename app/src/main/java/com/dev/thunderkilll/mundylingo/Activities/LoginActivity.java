@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
     com.facebook.login.widget.LoginButton login_button;
 
     public static Profile user;
-    public static String IPadress = "http://192.168.1.8";
+    public static String IPadress = "http://192.168.1.9";
     //public static String IPadress = "http://172.18.73.110";
 
     public String url = IPadress + "/miniProjetWebService/selectAjouUser.php?email=";
@@ -127,9 +127,9 @@ public class LoginActivity extends AppCompatActivity {
         login_actv.startAnimation(anim);
         anim = AnimationUtils.loadAnimation(this, R.anim.bounce);
         anim.reset();
-        anim1 = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        anim1 = AnimationUtils.loadAnimation(this, R.anim.bounce);
         anim1.reset();
-        anim2 = AnimationUtils.loadAnimation(this, R.anim.fade);
+        anim2 = AnimationUtils.loadAnimation(this, R.anim.bounce);
         anim2.reset();
         //starting the animation simple and not complicated
         logoImgV.clearAnimation();
@@ -137,7 +137,8 @@ public class LoginActivity extends AppCompatActivity {
 
         button2.clearAnimation();
         button2.setAnimation(anim1);
-
+        about.clearAnimation();
+        about.setAnimation(anim1);
         login_button.clearAnimation();
         login_button.setAnimation(anim2);
 
@@ -188,7 +189,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     retrieveFbUserProfile(AccessToken.getCurrentAccessToken());
 
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class); // send me to the main activity activity
+                    Intent intent = new Intent(LoginActivity.this, LoaderActivity.class); // send me to the main activity activity
                     startActivity(intent);
                     System.out.println(loginResult.getAccessToken());
                     System.out.println(loginResult.getRecentlyGrantedPermissions());
@@ -228,11 +229,7 @@ public class LoginActivity extends AppCompatActivity {
             Mydb.DeleteAllUsers();
             UpdateFbUserProfile(AccessToken.getCurrentAccessToken());
 
-
-
-
-
-            Intent intent = new Intent(this, MainActivity.class); // send me to the main activity activity
+            Intent intent = new Intent(this, LoaderActivity.class); // send me to the main activity activity
             startActivity(intent);
             Toast.makeText(LoginActivity.this, "  Welcome " + currentUser.getUsername(), Toast.LENGTH_LONG).show();
             LoginActivity.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

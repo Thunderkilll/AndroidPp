@@ -45,7 +45,7 @@ public class AboutUsActivity extends AppCompatActivity {
 
         //animation 2
 
-        anim1 = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        anim1 = AnimationUtils.loadAnimation(this, R.anim.bounce);
         anim1.reset();
 
         textView2.clearAnimation();
@@ -53,13 +53,13 @@ public class AboutUsActivity extends AppCompatActivity {
 
         //animation 3
 
-        anim2 = AnimationUtils.loadAnimation(this, R.anim.fade);
+        anim2 = AnimationUtils.loadAnimation(this, R.anim.bounce);
         anim2.reset();
 
         textView3.clearAnimation();
         textView3.startAnimation(anim2);
 
-        anim2 = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        anim2 = AnimationUtils.loadAnimation(this, R.anim.bounce);
         anim2.reset();
 
         textView3.clearAnimation();

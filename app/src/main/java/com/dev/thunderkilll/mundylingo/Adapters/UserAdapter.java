@@ -59,7 +59,7 @@ public class MyViewHolderUser extends RecyclerView.ViewHolder {
 
         myViewHolderUser.user_name.setText(u.getUsername());
         myViewHolderUser.user_score.setText(u.getScoreEng());
-        Glide.with(context)
+        Glide.with(context.getApplicationContext())
                 .load(u.getImgUrl())
                 .apply(RequestOptions.circleCropTransform())
                 .into(myViewHolderUser.imageUser);

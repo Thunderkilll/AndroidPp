@@ -69,4 +69,6 @@
     <string name="hint_offline">TODO</string>
     <string name="about">About Us</string>
     <string name="imgLeaderboard">image lea</string>
+    <string name="title_activity_level_comple">LevelCompleActivity</string>
+    <string name="loadingmsg">loading please wait ...</string>
 </resources>

@@ -22,6 +22,9 @@
             android:text="@string/slide_4_title"
             android:textColor="@android:color/white"
             android:textSize="@dimen/slide_title"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="5"
             android:textStyle="bold" />
 
         <TextView

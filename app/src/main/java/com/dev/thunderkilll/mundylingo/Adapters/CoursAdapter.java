@@ -75,7 +75,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
             //identify the language of this cours
             holder.id_langue_cour.setText("Langue  :  English");
             //convertir l'url en utilisant glade et l'afficher
-            Glide.with(context)
+            Glide.with(context.getApplicationContext())
                     .load(IPadress + "/miniProjetRessources/englishflag.jpg")
                     .into(holder.thumbnail_cours);
 
@@ -88,7 +88,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
             //french
             holder.id_langue_cour.setText("Langue   :  French");
 
-            Glide.with(context)
+            Glide.with(context.getApplicationContext())
                     .load(IPadress + "/miniProjetRessources/french_flag.jpg")
                     .into(holder.thumbnail_cours);
 
@@ -101,7 +101,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
         if (idLangue.equals("4")) {
             //spanish
             holder.id_langue_cour.setText("Langue  :    Spanish");
-            Glide.with(context)
+            Glide.with(context.getApplicationContext())
                     .load(IPadress + "/miniProjetRessources/spanishflag.jpg")
                     .into(holder.thumbnail_cours);
 
@@ -113,7 +113,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
         if (idLangue.equals("3")) {
             //german
             holder.id_langue_cour.setText("Langue  :   German");
-            Glide.with(context)
+            Glide.with(context.getApplicationContext())
                     .load(IPadress + "/miniProjetRessources/germanflag.jpg")
                     .into(holder.thumbnail_cours);
 

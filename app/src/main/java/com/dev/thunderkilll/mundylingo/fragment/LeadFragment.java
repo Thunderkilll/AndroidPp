@@ -22,13 +22,14 @@ import android.widget.Toast;
 import com.dev.thunderkilll.mundylingo.Adapters.UserAdapter;
 import com.dev.thunderkilll.mundylingo.R;
 
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getUseritemsList;
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getmAdapter;
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getmAdapterFR;
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getmAdapterGR;
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getmAdapterSP;
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.IPadress;
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.currentUser;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getUseritemsList;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getmAdapter;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getmAdapterFR;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getmAdapterGR;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getmAdapterSP;
+
 
 public class LeadFragment extends Fragment {
 

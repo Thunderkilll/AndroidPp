@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -46,111 +49,23 @@ import java.util.List;
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.IPadress;
 
 public class MainActivity extends AppCompatActivity {
+    //**************************declarations *******************************
     private Toolbar toolbar;
+    private CoordinatorLayout mainlayout;
     Menu menu;
-    public static List<User> UseritemsList;
-    public static List<User> UseritemsListFr;
-    public static List<User> UseritemsListSp;
-    public static List<User> UseritemsListGr;
-    public static List<Cour> courList;
-    public static UserAdapter mAdapter;
-    public static UserAdapter mAdapterFR;
-    public static UserAdapter mAdapterSP;
-    public static UserAdapter mAdapterGR;
-    public static CoursAdapter m2Adapter;
-    //Urls
-    public String url2 = IPadress + "/miniProjetWebService/Langue/leaderboard/LeaderboardENG.php";
-    public String url3 = IPadress + "/miniProjetWebService/Langue/leaderboard/LeaderboardFR.php";
-    public String url4 = IPadress + "/miniProjetWebService/Langue/leaderboard/LeaderboardESP.php";
-    public String url5 = IPadress + "/miniProjetWebService/Langue/leaderboard/LeaderboardGER.php";
+
+    //************************** Urls  **********************************************************
+
     private static final String URLi = IPadress + "/miniProjetWebService/Langue/cours/getAllCourses.php";
 
-    //sounds
+    //*********************** sounds **********************************************
     MediaPlayer btn_sound;
     MediaPlayer btn_sound1;
     MediaPlayer btn_sound2;
     MediaPlayer btn_sound3;
+    //*********************** animations  **********************************************
+    Animation anim;
 //TODO: getters and setters
-
-    public static List<User> getUseritemsListFr() {
-        return UseritemsListFr;
-    }
-
-    public static void setUseritemsListFr(List<User> useritemsListFr) {
-        UseritemsListFr = useritemsListFr;
-    }
-
-    public static List<User> getUseritemsListSp() {
-        return UseritemsListSp;
-    }
-
-    public static void setUseritemsListSp(List<User> useritemsListSp) {
-        UseritemsListSp = useritemsListSp;
-    }
-
-    public static List<User> getUseritemsListGr() {
-        return UseritemsListGr;
-    }
-
-    public static void setUseritemsListGr(List<User> useritemsListGr) {
-        UseritemsListGr = useritemsListGr;
-    }
-
-    public static UserAdapter getmAdapterFR() {
-        return mAdapterFR;
-    }
-
-    public static void setmAdapterFR(UserAdapter mAdapterFR) {
-        MainActivity.mAdapterFR = mAdapterFR;
-    }
-
-    public static UserAdapter getmAdapterSP() {
-        return mAdapterSP;
-    }
-
-    public static void setmAdapterSP(UserAdapter mAdapterSP) {
-        MainActivity.mAdapterSP = mAdapterSP;
-    }
-
-    public static UserAdapter getmAdapterGR() {
-        return mAdapterGR;
-    }
-
-    public static void setmAdapterGR(UserAdapter mAdapterGR) {
-        MainActivity.mAdapterGR = mAdapterGR;
-    }
-
-    public static List<Cour> getCourList() {
-        return courList;
-    }
-
-    public static void setCourList(List<Cour> courList) {
-        MainActivity.courList = courList;
-    }
-
-    public static CoursAdapter getM2Adapter() {
-        return m2Adapter;
-    }
-
-    public static void setM2Adapter(CoursAdapter m2Adapter) {
-        MainActivity.m2Adapter = m2Adapter;
-    }
-
-    public static List<User> getUseritemsList() {
-        return UseritemsList;
-    }
-
-    public static void setUseritemsList(List<User> useritemsList) {
-        UseritemsList = useritemsList;
-    }
-
-    public static UserAdapter getmAdapter() {
-        return mAdapter;
-    }
-
-    public static void setmAdapter(UserAdapter mAdapter) {
-        MainActivity.mAdapter = mAdapter;
-    }
 
 
     @SuppressLint("RestrictedApi")
@@ -158,9 +73,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar); //to set each fragment title
         menu = findViewById(R.id.side_menu);
+        mainlayout = findViewById(R.id.mainlayout);
         FacebookSdk.sdkInitialize(getApplicationContext());//initialize fb sdk
 
         //sound effects
@@ -168,35 +85,16 @@ public class MainActivity extends AppCompatActivity {
         btn_sound1 = MediaPlayer.create(MainActivity.this, R.raw.errorsound);
         btn_sound2 = MediaPlayer.create(MainActivity.this, R.raw.gigital_life1);
         btn_sound3 = MediaPlayer.create(MainActivity.this, R.raw.scifi);
-
+        //animation effects
 
         BottomNavigationView navigation = findViewById(R.id.navigation); //to navigate to each fragment i nead a ref for the nav bottom view
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //declaring the lists of objects
-
-        UseritemsList = new ArrayList<>();
-        UseritemsListFr = new ArrayList<>();
-        UseritemsListSp = new ArrayList<>();
-        UseritemsListGr = new ArrayList<>();
-        courList = new ArrayList<>();
-
-        // Json response
-        getListEnglish();
-        getListFrench();
-        getListSpanish();
-        getListGerman();
-        getData();
-        //editing the adapter
-        mAdapter = new UserAdapter(this, UseritemsList);
-        mAdapterFR = new UserAdapter(this, UseritemsListFr);
-        mAdapterSP = new UserAdapter(this, UseritemsListSp);
-        mAdapterGR = new UserAdapter(this, UseritemsListGr);
-        m2Adapter = new CoursAdapter(this, courList);
 
         // load the home fragment  :   fragment by default
 
         toolbar.setTitle("Home");
+        toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
         loadFragment(new HomeFragment());
         setSupportActionBar(toolbar);
 
@@ -214,27 +112,32 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_shop:
                     // toolbar.setTitle("Shop");
                     btn_sound.start();
+                    toolbar.setTitle("Home");
+                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
                     fragment = new HomeFragment();
                     loadFragment(fragment);
-                    toolbar.setTitle("Home");
                     return true;
                 case R.id.navigation_gifts:
                     //toolbar.setTitle("My Gifts");
                     btn_sound.start();
+                    toolbar.setTitle("main courses");
+                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
                     fragment = new CoursFragment();
                     loadFragment(fragment);
-                    toolbar.setTitle("main courses");
                     return true;
                 case R.id.navigation_cart:
                     // toolbar.setTitle("Cart");
                     btn_sound.start();
+                    toolbar.setTitle("Leaderboard");
+                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
                     fragment = new LeadFragment();
                     loadFragment(fragment);
-                    toolbar.setTitle("Leaderboard");
+
                     return true;
                 case R.id.navigation_profile:
                     btn_sound.start();
                     toolbar.setTitle("Profile");
+                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
                     fragment = new ProfileFragment();
                     loadFragment(fragment);
                     return true;
@@ -264,225 +167,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //get leaderboard list of english language
-    public void getListEnglish() {
-
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
-
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url2, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-                Log.e("index>>>>>>", jsonArray.toString());
-
-
-                try {
-
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-
-                        JSONObject jObj = jsonArray.getJSONObject(i);
-                        User user = new User(jObj.getString("email"), jObj.getString("image"), jObj.getString("scoreAng"));
-                        UseritemsList.add(user);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                mAdapter.leadersList = UseritemsList;
-                //mAdapter = new UserAdapter(getActivity(), itemsList);
-
-                mAdapter.notifyDataSetChanged();
-                progressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-
-
-    }
-
-    //get leaderboard list of french language
-    public void getListFrench() {
-
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
-
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url3, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-                Log.e("index>>>>>>", jsonArray.toString());
-
-
-                try {
-
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-
-                        JSONObject jObj = jsonArray.getJSONObject(i);
-                        User user = new User(jObj.getString("email"), jObj.getString("image"), jObj.getString("scoreF"));
-                        UseritemsListFr.add(user);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                mAdapterFR.leadersList = UseritemsListFr;
-                //mAdapter = new UserAdapter(getActivity(), itemsList);
-
-                mAdapterFR.notifyDataSetChanged();
-                progressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-
-
-    }
-
-    //get leaderboard list of spanish language
-    public void getListSpanish() {
-
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url4, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-//TODO: fill in the list of 5 best user in spanish
-                try {
-
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-
-                        JSONObject jObj = jsonArray.getJSONObject(i);
-                        User user = new User(jObj.getString("email"), jObj.getString("image"), jObj.getString("scoreEsp"));
-                        UseritemsListSp.add(user);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                mAdapterSP.leadersList = UseritemsListSp;
-                mAdapterSP.notifyDataSetChanged();
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-
-
-    }
-
-    //get leaderboard list of german language
-    public void getListGerman() {
-//TODO: fill in the list of 5 best user in german
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url5, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-
-                try {
-                    for (int i = 0; i < jsonArray.length(); i++) {
-
-                        JSONObject jObj = jsonArray.getJSONObject(i);
-                        User user = new User(jObj.getString("email"), jObj.getString("image"), jObj.getString("scoreGerm"));
-                        UseritemsListGr.add(user);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                mAdapterGR.leadersList = UseritemsListGr;
-                mAdapterGR.notifyDataSetChanged();
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-
-
-    }
-
-
-    public void getData() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
-
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URLi, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-                Log.e("index>>>>>>", jsonArray.toString());
-
-
-                try {
-
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-
-                        JSONObject jObj = jsonArray.getJSONObject(i);
-
-                        Cour c = new Cour(
-                                String.valueOf(jObj.getInt("id")),
-                                jObj.getString("idLevel"),
-                                jObj.getString("grammaire"),
-                                jObj.getString("conjugaison"),
-                                jObj.getString("orthographe"),
-                                String.valueOf(jObj.getInt("langue")));
-
-
-                        Log.d("affichageCours", c.toString());
-
-                        courList.add(c);
-                        for (int j = 0; j < courList.size(); j++) {
-                            if (courList.get(j).getLangue().equals("1"))
-                                System.out.println("fr");
-                            if (courList.get(j).getLangue().equals("2"))
-                                System.out.println("en");
-                            if (courList.get(j).getLangue().equals("3"))
-                                System.out.println("ger");
-                            if (courList.get(j).getLangue().equals("4"))
-                                System.out.println("sp");
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-                m2Adapter.itemcourList = courList;
-                m2Adapter.notifyDataSetChanged();
-                progressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-    }
 
 //todo: add menu
 

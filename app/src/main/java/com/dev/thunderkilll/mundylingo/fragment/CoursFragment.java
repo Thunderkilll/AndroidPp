@@ -33,8 +33,8 @@ import java.util.List;
 
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.IPadress;
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.currentUser;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getCourList;
-import static com.dev.thunderkilll.mundylingo.Activities.MainActivity.getM2Adapter;
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getCourList;
+import static com.dev.thunderkilll.mundylingo.Activities.LoaderActivity.getM2Adapter;
 
 public class CoursFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
