@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         // load the home fragment  :   fragment by default
 
         toolbar.setTitle("Home");
-        toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
+        toolbar.setLogo(R.drawable.toolbarlogo);
         loadFragment(new HomeFragment());
         setSupportActionBar(toolbar);
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     // toolbar.setTitle("Shop");
                     btn_sound.start();
                     toolbar.setTitle("Home");
-                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
+                    toolbar.setLogo(R.drawable.toolbarlogo);
                     fragment = new HomeFragment();
                     loadFragment(fragment);
                     return true;
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     //toolbar.setTitle("My Gifts");
                     btn_sound.start();
                     toolbar.setTitle("main courses");
-                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
+                    toolbar.setLogo(R.drawable.toolbarlogo);
                     fragment = new CoursFragment();
                     loadFragment(fragment);
                     return true;
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     // toolbar.setTitle("Cart");
                     btn_sound.start();
                     toolbar.setTitle("Leaderboard");
-                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
+                    toolbar.setLogo(R.drawable.toolbarlogo);
                     fragment = new LeadFragment();
                     loadFragment(fragment);
 
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_profile:
                     btn_sound.start();
                     toolbar.setTitle("Profile");
-                    toolbar.setLogo(R.drawable.toolbarlogo_xxxhdpi);
+                    toolbar.setLogo(R.drawable.toolbarlogo);
                     fragment = new ProfileFragment();
                     loadFragment(fragment);
                     return true;
