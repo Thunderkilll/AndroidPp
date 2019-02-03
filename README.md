@@ -34,9 +34,21 @@ Have fun
  
  
  
-## Deployment
+## Screenshots
 
-Add additional notes about how to deploy this on a live system
+Add additional screenshot of the project :
+
+1  
+![alt text](https://github.com/Thunderkilll/AndroidPp/blob/master/captures/Screenshot_20190203-230443.jpg)
+2
+![alt text](https://github.com/Thunderkilll/AndroidPp/blob/master/captures/Screenshot_20190203-230456.jpg)
+3
+![alt text](https://github.com/Thunderkilll/AndroidPp/blob/master/captures/Screenshot_20190203-230500.jpg)
+4
+![alt text](https://github.com/Thunderkilll/AndroidPp/blob/master/captures/Screenshot_20190203-230516.jpg)
+5
+![alt text](https://github.com/Thunderkilll/AndroidPp/blob/master/captures/Screenshot_20190203-232908.jpg)
+
 
 ## Built With
 
