@@ -5,7 +5,7 @@
     <color name="colorPrimaryDark">#305165</color>
     <color name="colorAccent">#f98948</color>
     <color name="colorBackground">#F7FAF6</color>
-    <color name="colorFaded">#dddedd</color>
+    <color name="colorFaded">#E6E6E6</color>
     <color name="colorDark">#212121</color>
     <color name="colorPrimaryPix">@color/colorPrimary</color>
     <color name="colorPrimaryLightPix">#305165</color>

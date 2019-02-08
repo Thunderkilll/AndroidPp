@@ -2,32 +2,63 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_actv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryPix"
-    tools:context=".Activities.LoginActivity"
-    android:id="@+id/login_actv">
+    tools:context=".Activities.LoginActivity">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="253dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/reg_btn_style"
-        android:onClick="Offline_LogIn"
-        android:text="login"
-        android:textColor="@color/blanc"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
+    <View
+        android:layout_width="224dp"
+        android:layout_height="241dp"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/reg_textview_style1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/relative2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="253dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/reg_btn_style"
+            android:onClick="Offline_LogIn"
+            android:text="login"
+            android:textColor="@color/blanc"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:id="@+id/viewback"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_alignStart="@+id/button2"
+            android:layout_marginStart="0dp"
+            android:background="@drawable/white_gradient" />
+
+    </RelativeLayout>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -36,38 +67,74 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
-
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="253dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="F"
-        android:textColor="@color/blanc"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/relative3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative1">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="253dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="116dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="About US"
-        android:textColor="@color/blanc"
-        android:textSize="21sp"
-        android:textStyle="bold"
+        <View
+            android:id="@+id/viewback2"
+            android:layout_width="211dp"
+            android:layout_height="27dp"
+            android:layout_alignStart="@+id/login_button"
+            android:layout_marginStart="-1dp"
+            android:background="@drawable/white_gradient" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/reg_btn_style" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relative3"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative2">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="168dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="116dp"
+            android:background="@drawable/reg_btn_style"
+            android:text="About US"
+            android:textColor="@color/blanc"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/viewback3"
+            android:layout_width="168dp"
+            android:layout_height="39dp"
+            android:layout_alignStart="@+id/button4"
+            android:layout_marginStart="1dp"
+            android:background="@drawable/white_gradient" />
+    </RelativeLayout>
+
 
     <ImageView
         android:id="@+id/logoImgV"

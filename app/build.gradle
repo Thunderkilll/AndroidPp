@@ -50,6 +50,8 @@ dependencies {
     implementation 'com.github.pwittchen:reactivenetwork-rx2:3.0.2'
     //steelwiki dots
     implementation 'com.steelkiwi:dots-loader-view:1.0.0'
+    //cool button animations
+    implementation 'com.github.varunest:sparkbutton:1.0.6'
 
 
 }

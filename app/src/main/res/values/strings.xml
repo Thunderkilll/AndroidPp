@@ -71,4 +71,6 @@
     <string name="imgLeaderboard">image lea</string>
     <string name="title_activity_level_comple">LevelCompleActivity</string>
     <string name="loadingmsg">loading please wait ...</string>
+    <string name="act_conj_detailstitle">title</string>
+    <string name="act_conj_detailsub_title">sub title</string>
 </resources>

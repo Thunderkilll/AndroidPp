@@ -4,27 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.LoaderActivity"
-    android:background="@color/colorPrimaryPix">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="214dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="28dp"
-
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="8dp"
-            android:contentDescription="@string/hint_offline"
-            android:src="@drawable/logoproject"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    android:background="@color/colorPrimaryPix"
+    tools:context=".Activities.LoaderActivity">
 
         <steelkiwi.com.library.DotsLoaderView
             android:id="@+id/dotsLoaderView"
@@ -37,10 +18,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/hint_offline"
+            android:src="@drawable/logoproject"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.021" />
+
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -54,11 +53,9 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.88" />
-
+            app:layout_constraintVertical_bias="0.98" />
 
 
 </android.support.constraint.ConstraintLayout>

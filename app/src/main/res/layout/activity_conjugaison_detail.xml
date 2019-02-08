@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/adroid">
+    android:background="@color/colorAccent">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,7 +31,7 @@
                     android:id="@+id/textfonts"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="title"
+                    android:text="@string/act_conj_detailstitle"
                     android:textAlignment="center"
                     android:textColor="@color/blanc"
                     android:textSize="50sp" />
@@ -40,7 +40,7 @@
                     android:id="@+id/textfonts1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="title"
+                    android:text="@string/act_conj_detailsub_title"
                     android:textAlignment="center"
                     android:textColor="@color/blanc"
                     android:textSize="38sp" />
@@ -52,7 +52,9 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textColor="@color/blanc"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    android:text="grammar"
+                    />
 
                 <TextView
                     android:id="@+id/separateur2"
@@ -69,7 +71,8 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textColor="@color/blanc"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    android:text="conjugaison"/>
 
                 <TextView
                     android:id="@+id/separateur3"
@@ -87,7 +90,8 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textColor="@color/blanc"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    android:text="orthographe"/>
 
                 <TextView
                     android:id="@+id/separateur4"
@@ -106,8 +110,7 @@
                     <Button
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-
-                        android:background="@color/lightblue"
+                        android:background="@color/colorPrimaryDark"
                         android:onClick="GoToQuestion"
                         android:text="Start Level"
                         android:textColor="@color/blanc"
@@ -121,8 +124,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="300dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     app:layout_anchor="@+id/linearLayout"
                     app:layout_anchorGravity="right|top"
+                    app:rippleColor="@color/colorPrimaryPix"
                     app:srcCompat="@android:drawable/ic_input_add" />
             </LinearLayout>
 
