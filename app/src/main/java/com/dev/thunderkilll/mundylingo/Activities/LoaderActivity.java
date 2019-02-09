@@ -43,6 +43,7 @@ public class LoaderActivity extends Activity {
     static String status ="";
     private static final String URLi = IPadress + "/miniProjetWebService/Langue/cours/getAllCourses.php";
     Thread splashTread;
+    Thread offlineTread;
     DotsLoaderView dotsLoaderViewt;
     //************************** Urls  **********************************************************
     public String url2 = IPadress + "/miniProjetWebService/Langue/leaderboard/LeaderboardENG.php";
@@ -141,7 +142,7 @@ public class LoaderActivity extends Activity {
          status = "starting";
         //declaring the lists of objects
         dotsLoaderViewt.show();
-        dotsLoaderViewt.hide();
+
         UseritemsList = new ArrayList<>();
         UseritemsListFr = new ArrayList<>();
         UseritemsListSp = new ArrayList<>();
@@ -161,7 +162,9 @@ public class LoaderActivity extends Activity {
 
 // TODO : services
 
-    public  void waitingThread(){
+
+
+    public  void waitingThread(){  // a thread to wait 10 secs
 
         splashTread = new Thread() {
             @Override
@@ -169,7 +172,7 @@ public class LoaderActivity extends Activity {
                 try {
                     int waited = 0;
                     // Splash screen pause time
-                    while (waited <6000) {
+                    while (waited <10000) {
                         sleep(100);
                         waited += 100;
                     }
@@ -189,6 +192,55 @@ public class LoaderActivity extends Activity {
         splashTread.start();
     }
 
+
+    public  void offlineThread(){  // a thread to wait 10 secs
+
+        // calling web services
+        getListEnglish();
+        getListFrench();
+        getListSpanish();
+        getListGerman();
+        getData();
+        //editing the adapter
+        mAdapter = new UserAdapter(this, UseritemsList);
+        mAdapterFR = new UserAdapter(this, UseritemsListFr);
+        mAdapterSP = new UserAdapter(this, UseritemsListSp);
+        mAdapterGR = new UserAdapter(this, UseritemsListGr);
+        m2Adapter = new CoursAdapter(this, courList);
+        //checkinng the results
+        if (status=="failed"){
+
+            offlineTread = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        int waited = 0;
+                        // Splash screen pause time
+                        while (waited <10000) {
+                            sleep(100);
+                            waited += 100;
+                        }
+                        Intent intent = new Intent(LoaderActivity.this,
+                                OfflineActivity.class);//LoginActivity.class CoursEnglishActivity
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent);
+                        LoaderActivity.this.finish();
+                    } catch (InterruptedException e) {
+                        // do nothing
+                    } finally {
+                        LoaderActivity.this.finish();
+                    }
+
+                }
+            };
+            offlineTread.start();
+        }else{
+
+            waitingThread() ;
+        }
+
+    }
+
     public void CallThemAll() throws InterruptedException {
         dotsLoaderViewt.show();
         // Json response
@@ -204,21 +256,16 @@ public class LoaderActivity extends Activity {
         mAdapterGR = new UserAdapter(this, UseritemsListGr);
         m2Adapter = new CoursAdapter(this, courList);
         if (status=="failed"){
-            // Json response
-            getListEnglish();
-            getListFrench();
-            getListSpanish();
-            getListGerman();
-            getData();
-            //editing the adapter
-            mAdapter = new UserAdapter(this, UseritemsList);
-            mAdapterFR = new UserAdapter(this, UseritemsListFr);
-            mAdapterSP = new UserAdapter(this, UseritemsListSp);
-            mAdapterGR = new UserAdapter(this, UseritemsListGr);
-            m2Adapter = new CoursAdapter(this, courList);
+
+
+            offlineThread() ;
+
         }else{
-            dotsLoaderViewt.hide();
+            dotsLoaderViewt.show();
+
             waitingThread();
+
+
             }
 
     }

@@ -43,7 +43,8 @@ public class ConjugaisonDetailActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarDt);
         toolbar.setTitle("Cours" + selectedCour.getId());
         setSupportActionBar(toolbar);
-
+        toolbar.setLogo(R.drawable.toolbarlogo);
+        toolbar.setTitle("");
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -115,8 +116,8 @@ public class ConjugaisonDetailActivity extends AppCompatActivity {
                     boolean state;
                     state = Mydb.InsertCour(selectedCour.getLangue(), selectedCour.getGrammaire(), selectedCour.getConjugaison(), selectedCour.getOrthographe(), selectedCour.getId());
                     if (state)
-                             Snackbar.make(view, "add cour to DB", Snackbar.LENGTH_LONG)
-                                         .setAction("Action", null).show();
+                        Snackbar.make(view, "add cour to DB", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                     else
                         Snackbar.make(view, "cours already exists or something went wrong", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();

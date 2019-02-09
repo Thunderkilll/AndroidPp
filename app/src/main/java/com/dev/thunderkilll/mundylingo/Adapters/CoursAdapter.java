@@ -1,6 +1,7 @@
 package com.dev.thunderkilll.mundylingo.Adapters;
 
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,17 +11,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.dev.thunderkilll.mundylingo.Helpers.DatabaseHelper;
 import com.dev.thunderkilll.mundylingo.Models.Cour;
 import com.dev.thunderkilll.mundylingo.R;
+import com.varunest.sparkbutton.SparkButton;
+import com.varunest.sparkbutton.SparkEventListener;
 
 import java.util.List;
 
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.IPadress;
 import static com.dev.thunderkilll.mundylingo.Activities.LoginActivity.currentUser;
+import static com.dev.thunderkilll.mundylingo.fragment.CoursFragment.selectedCour;
 
 public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolders> {
     private Context context;
     public List<Cour> itemcourList;
+    public DatabaseHelper Mydb;
 
     public class MyViewHolders extends RecyclerView.ViewHolder {
 
@@ -29,6 +35,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
         public TextView idLevel;
         public TextView id_langue_cour;
         public ImageView lock;
+        SparkButton likebtn;
 
         public MyViewHolders(View view) {
             super(view);
@@ -37,7 +44,8 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
             idLevel = view.findViewById(R.id.lvl_id_cour);
             thumbnail_cours = view.findViewById(R.id.thumbnail_cours);
             lock = view.findViewById(R.id.lock_thumb);
-            //appel au cadnat
+            likebtn = view.findViewById(R.id.likebtn);
+            Mydb = new DatabaseHelper(view.getContext());
         }
     }
 
@@ -58,6 +66,38 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(MyViewHolders holder, final int position) {
         final Cour lg = itemcourList.get(position);
+        //btn like
+        holder.likebtn.setEventListener(new SparkEventListener(){
+            @Override
+            public void onEvent(ImageView button, boolean buttonState) {
+                if (buttonState) {
+
+                    holder.likebtn.playAnimation();
+
+                                     boolean state;
+                                     state = Mydb.InsertCour(lg.getLangue(), lg.getGrammaire(), lg.getConjugaison(), lg.getOrthographe(), lg.getId());
+                         if (state)
+                                     /*  Snackbar.make(view, "add cour to DB", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();*/
+                                 System.out.println("added ");
+                            else
+
+                                 System.out.println("not added ");
+
+
+            }
+            }
+
+            @Override
+            public void onEventAnimationEnd(ImageView button, boolean buttonState) {
+
+            }
+
+            @Override
+            public void onEventAnimationStart(ImageView button, boolean buttonState) {
+
+            }
+        });
         //title mta3 el cour = id mte3ou fill base de donnée
         String setTitle = "Cours : " + lg.getId();
         holder.titleCours.setText(setTitle);
@@ -121,6 +161,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
             if (ConvertToInt(lg.getIdLevel()) > ConvertToInt(currentUser.getLevelGer())) {
                 holder.lock.setVisibility(View.VISIBLE);
             }
+
         }
 
 
