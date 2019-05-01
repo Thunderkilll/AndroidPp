@@ -24,6 +24,8 @@
             android:textSize="@dimen/slide_title"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             android:maxLines="5"
             android:textStyle="bold" />
 

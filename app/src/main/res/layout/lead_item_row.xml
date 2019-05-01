@@ -41,8 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/user_img"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="34dp"
-                android:layout_marginTop="-11dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="0dp"
                 android:layout_toEndOf="@+id/user_img"
                 android:background="@drawable/reg_edittext_style"
@@ -63,15 +63,15 @@
             <TextView
                 android:id="@+id/user_score"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_below="@+id/separateur"
                 android:layout_alignStart="@+id/user_name"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="9dp"
-                android:layout_marginTop="17dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/reg_edittext_style"
-                android:fontFamily="@font/butcherman"
+
                 android:textSize="20sp"
                 android:typeface="serif" />
 

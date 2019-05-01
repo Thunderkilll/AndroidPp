@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mock"
+    android:background="@drawable/paper"
     tools:context=".Activities.CourDetailsActivity">
 
 
@@ -17,90 +17,97 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".Activities.ConjugaisonDetailActivity">
+        tools:context=".Activities.ConjugaisonDetailActivity"
+        android:weightSum="100">
 
+        <TextView
+            android:id="@+id/textfonts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:layout_weight="20"/>
+
+        <TextView
+            android:id="@+id/textfonts1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="38sp"
+            android:layout_weight="10"/>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_weight="20">
 
-
-                <TextView
-                    android:id="@+id/textfonts"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="title"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanc"
-                    android:textSize="50sp" />
-
-                <TextView
-                    android:id="@+id/textfonts1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="title"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanc"
-                    android:textSize="38sp" />
-
-
-                <TextView
-                    android:id="@+id/textfonts2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanc"
-                    android:textSize="32sp" />
-
-                <TextView
-                    android:id="@+id/separateur2"
-                    android:layout_width="match_parent"
-                    android:layout_height="4dp"
-                    android:background="@color/blanc"
-                    android:text="                             "
-                    android:textAlignment="center"
-                    android:textSize="48sp" />
-
-                <TextView
-                    android:id="@+id/textfonts3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanc"
-                    android:textSize="32sp" />
-
-                <TextView
-                    android:id="@+id/separateur3"
-                    android:layout_width="match_parent"
-                    android:layout_height="4dp"
-                    android:background="@color/blanc"
-                    android:text="                             "
-                    android:textAlignment="center"
-                    android:textSize="48sp" />
-
-
-                <TextView
-                    android:id="@+id/textfonts4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanc"
-                    android:textSize="32sp" />
-
-                <TextView
-                    android:id="@+id/separateur4"
-                    android:layout_width="match_parent"
-                    android:layout_height="4dp"
-                    android:background="@color/blanc"
-                    android:text="                             "
-                    android:textAlignment="center"
-                    android:textSize="48sp" />
-
-
-
-
+            <TextView
+                android:id="@+id/textfonts2"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
         </ScrollView>
 
+        <TextView
+            android:id="@+id/separateur2"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:text="                             "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="48sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20">
+
+            <TextView
+                android:id="@+id/textfonts3"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/separateur3"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:text="                             "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="48sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20">
+
+            <TextView
+                android:id="@+id/textfonts4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/separateur4"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:text="                             "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="48sp" />
 
     </LinearLayout>
 

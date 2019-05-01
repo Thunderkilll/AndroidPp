@@ -13,8 +13,8 @@
 
     </style>
 
-    <style name="Widget.MultiSlider" parent="android:Widget">
-    </style>
+    <style name="Widget.MultiSlider" parent="android:Widget"></style>
+
     <style name="AppTheme.Launcher">
         <item name="android:windowBackground">@drawable/logoproject</item>
     </style>

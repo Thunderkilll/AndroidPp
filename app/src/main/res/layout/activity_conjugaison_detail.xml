@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="@drawable/paper">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/act_conj_detailstitle"
                     android:textAlignment="center"
-                    android:textColor="@color/blanc"
+                    android:textColor="@color/bg_screen3"
                     android:textSize="50sp" />
 
                 <TextView
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/act_conj_detailsub_title"
                     android:textAlignment="center"
-                    android:textColor="@color/blanc"
+                    android:textColor="@color/bg_screen1"
                     android:textSize="38sp" />
 
 
@@ -51,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:textColor="@color/blanc"
+                    android:textColor="@color/black"
                     android:textSize="32sp"
                     android:text="grammar"
                     />
@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:textColor="@color/blanc"
+                    android:textColor="@color/black"
                     android:textSize="32sp"
                     android:text="conjugaison"/>
 
@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:textColor="@color/blanc"
+                    android:textColor="@color/black"
                     android:textSize="32sp"
                     android:text="orthographe"/>
 
@@ -108,18 +108,21 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorPrimaryDark"
+                        android:layout_weight="10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:background="@drawable/btn_green_rect_in"
+                         android:scaleX="0.8"
                         android:onClick="GoToQuestion"
                         android:text="Start Level"
+                        android:textAlignment="center"
                         android:textColor="@color/blanc"
                         android:textSize="28sp" />
 
 
                 </LinearLayout>
 
-                <android.support.design.widget.FloatingActionButton
+                <!--android.support.design.widget.FloatingActionButton
                     android:id="@+id/addcour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +132,7 @@
                     app:layout_anchor="@+id/linearLayout"
                     app:layout_anchorGravity="right|top"
                     app:rippleColor="@color/colorPrimaryPix"
-                    app:srcCompat="@android:drawable/ic_input_add" />
+                    app:srcCompat="@android:drawable/ic_input_add" /-->
             </LinearLayout>
 
         </ScrollView>
@@ -141,14 +144,14 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+         >
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbarDt"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+           />
 
     </android.support.design.widget.AppBarLayout>
 

@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/side_menu"
-    tools:context=".Activities.MainActivity">
+    tools:context=".Activities.MainActivity"
 
+    >
     <item
-        android:id="@+id/side_fav"
-        android:icon="@drawable/ic_store_white_24dp"
-        android:iconTint="@color/black"
-        android:title="fav" />
-    <item
-        android:id="@+id/side_settings"
-        android:icon="@drawable/ic_store_white_24dp"
-        android:iconTint="@color/black"
-        android:title="settings" />
-    <item
-        android:id="@+id/side_logout"
-        android:icon="@android:drawable/ic_lock_idle_charging"
-        android:iconTint="@color/black"
-        android:title="logout" />
+        android:icon="@android:drawable/ic_menu_more"
+        android:title="Main Menu"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/side_fav"
+                android:icon="@drawable/ic_school_black_24dp"
+                android:iconTint="@color/black"
+                android:title="My Lessons"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/side_about_us"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:iconTint="@color/black"
+                android:title="About Us"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/side_logout"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:iconTint="@color/black"
+                android:title="Logout"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+
+
 </menu>

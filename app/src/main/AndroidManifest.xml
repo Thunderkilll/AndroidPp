@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dev.thunderkilll.mundylingo">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sim.mundylingo">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,34 +10,22 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-
-        <activity android:name=".Activities.LoaderActivity">
-
-        </activity>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
         <activity
-            android:name=".Activities.LevelCompleActivity"
-            android:label="@string/title_activity_level_comple"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.OfflineActivity" />
-        <activity android:name=".Activities.CourDetailsActivity" />
+            android:name=".Questions.Question1Activity"
+            android:label="@string/title_activity_question1"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Activities.LoginActivity"
+            android:name=".Activities.RegisterActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Activities.WelcomeActivity"
-            android:screenOrientation="portrait" />
-
-        <provider
-            android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProviderandyourappidfromfacebookconsole"
-            android:exported="true" />
-
         <activity
             android:name=".Activities.SplashScreen"
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_splash_screen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,51 +33,85 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.MainActivity"
-            android:screenOrientation="portrait" />
+            android:name=".Activities.WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.CoursEnglishActivity"
-            android:screenOrientation="portrait" />
+            android:name=".Activities.OfflineActivity"
+            android:label="@string/title_activity_offline"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.CoursFrançais"
-            android:screenOrientation="portrait" />
+            android:name=".Activities.LoaderActivity"
+            android:label="@string/title_activity_loader"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.CoursSpanish"
-            android:screenOrientation="portrait" />
+            android:name=".Activities.LevelCompleActivity"
+            android:label="@string/title_activity_level_comple"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
 
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
-        <activity
-            android:name="com.facebook.FacebookActivity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
-        <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
         </activity>
         <activity
+            android:name=".Activities.CoursSpanish"
+            android:label="@string/title_activity_cours_spanish"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.CoursGermanActivity"
+            android:label="@string/title_activity_cours_german"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.CoursPrefActivity"
+            android:label="@string/title_activity_cours_pref"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.CoursFrancais"
+            android:label="@string/title_activity_cours_francais"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.CoursEnglishActivity"
+            android:label="@string/title_activity_cours_english"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.CourDetailsActivity"
+            android:label="@string/title_activity_cour_details"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Activities.ConjugaisonDetailActivity"
+            android:label="@string/title_activity_conjugaison_detail"
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AboutUs.AboutUsActivity"
             android:parentActivityName=".Activities.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.Main2Activity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Activities.CoursGermanActivity" />
-        <activity android:name=".Activities.CoursPrefActivity" />
-        <activity android:name=".AboutUs.AboutUsActivity" />
+            android:name=".Activities.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

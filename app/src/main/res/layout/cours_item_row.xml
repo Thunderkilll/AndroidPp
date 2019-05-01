@@ -89,7 +89,6 @@
                 android:textSize="20sp" />
 
 
-
             <com.varunest.sparkbutton.SparkButton
                 android:id="@+id/likebtn"
                 android:layout_width="73dp"
@@ -107,6 +106,7 @@
                 app:sparkbutton_inActiveImage="@drawable/ic_favorite_border_black_24dp"
                 app:sparkbutton_primaryColor="@color/colorAccent"
                 app:sparkbutton_secondaryColor="@color/bgBottomNavigation" />
+
 
 
         </RelativeLayout>

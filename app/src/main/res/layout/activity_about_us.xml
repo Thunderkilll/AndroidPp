@@ -28,25 +28,24 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:text="Lingued"
-            android:gravity="center"
             android:layout_gravity="center"
             android:background="@drawable/cardlayout"
-            android:typeface="serif"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:gravity="center"
+            android:text="Lingued"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:typeface="serif" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView1"
             android:layout_below="@+id/textView1"
-            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/textView1"
             android:layout_gravity="center"
-            android:text= "@string/about_us"
+            android:layout_marginTop="10dp"
             android:background="@drawable/cardlayout"
             android:padding="10dp"
-            />
+            android:text="@string/about_us" />
 
         <TextView
             android:id="@+id/textView3"

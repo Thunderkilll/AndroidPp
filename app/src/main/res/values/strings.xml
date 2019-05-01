@@ -1,13 +1,31 @@
 <resources>
-    <string name="app_name">MyLanguageTeacher</string>
+    <string name="app_name">Lingued</string>
+    <!-- facebook identifier  -->
+
+
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_conjugaison_detail">ConjugaisonDetailActivity</string>
+    <string name="title_activity_cour_details">CourDetailsActivity</string>
+    <string name="title_activity_cours_english">CoursEnglishActivity</string>
+    <string name="title_activity_cours_francais">CoursFrancais</string>
+    <string name="title_activity_cours_pref">CoursPrefActivit</string>
+    <string name="title_activity_cours_german">CoursGermanActivity</string>
+    <string name="title_activity_cours_spanish">CoursSpanish</string>
+    <string name="title_activity_level_comple">LevelCompleActivity</string>
+    <string name="title_activity_loader">LoaderActivity</string>
+    <string name="title_activity_offline">OfflineActivity</string>
+    <string name="title_activity_pref_manager">PrefManager</string>
+    <string name="title_activity_splash_screen">Lingued</string>
     <string name="title_activity_welcome">Home Screen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
-    <!-- Slider Strings -->
-    <!-- Slider 1-->
     <string name="slide_1_title">Welcome To MundyLingo</string>
     <string name="slide_1_desc">We are going to learn some languages together !</string>
     <!-- Slider 2-->
@@ -28,19 +46,13 @@
     <!-- others -->
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
-    <!-- facebook ID  -->
-    <string name="facebook_app_id">278184122767496</string>
-    <string name="fb_login_protocol_scheme">fb278184122767496</string>
-
-    <!-- buttom navigation bar -->
-
     <string name="title_shop">HOME</string>
-    <string name="title_gifts">CORSES</string>
-    <string name="title_cart">ADVANCEMENT</string>
+    <string name="title_gifts">LESSONS</string>
+    <string name="title_cart">RANKING</string>
     <string name="title_profile">PROFILE</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="home_fragment">select what you want to learn today </string>
 
     <string name="cours_fragment">available courses today</string>
@@ -61,16 +73,19 @@
             Our names are Khaled Guesmi and Raoudha Nalouti .
     </string>
 
-    <string name="devs">Built by Khaled Guesmi and Raoudha Nalouti\n Version: 1.0 beta</string>
+    <string name="devs">Built by Khaled Guesmi \n Version: 1.0 beta</string>
     <string name="holder_cours">cours 1</string>
     <string name="place_holder_english">English</string>
     <string name="hint_see_information">see information</string>
     <string name="hint_language_image">language image</string>
     <string name="hint_offline">TODO</string>
     <string name="about">About Us</string>
-    <string name="imgLeaderboard">image lea</string>
-    <string name="title_activity_level_comple">LevelCompleActivity</string>
-    <string name="loadingmsg">loading please wait ...</string>
+    <string name="imgLeaderboard">image lead</string>
+    <string name="loadingmsg">Loading please wait …</string>
     <string name="act_conj_detailstitle">title</string>
     <string name="act_conj_detailsub_title">sub title</string>
+    <string name="victory_text">VICTORY</string>
+    <string name="signin">Dont have an Account ? Create Account Now !</string>
+    <string name="title_activity_question1">Question1Activity</string>
+
 </resources>
